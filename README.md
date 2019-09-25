@@ -1,5 +1,2 @@
-# workshop_gdansk
-Hello Gdansk!
-
-
-Zmiana jakas
+ca³kowita zmiana pliku
+mergowanie
