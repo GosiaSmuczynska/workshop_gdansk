@@ -26,48 +26,51 @@ namespace CSharp_Basics
             Console.WriteLine(suma);
         }
 
-        //        /// <summary>
-        //        ///  string is  first Reference Type you see (We will talk more about them later)
-        //        ///  which means he doesn't have to have value.
-        //        ///  use string.Empty;
-        //        ///  create new strings itsEmpty and make it empty
-        //        /// </summary>
-        //        [Test]
-        //        public void String_Initialization()
-        //        {
+        ///// <summary>
+        /////  string is  first Reference Type you see (We will talk more about them later)
+        /////  which means he doesn't have to have value.
+        /////  use string.Empty;
+        /////  create new strings itsEmpty and make it empty
+        ///// </summary>
+        //[Test]
+        //public void String_Initialization()
+        //{
 
-        //            Assert.That(itsEmpty, Is.Not.Null);
-        //        }
+        //    Assert.That(isEmpty, Is.Not.Null);
+        //}
 
-        //        /// <summary>
-        //        /// + is not best way of adding string
-        //        ///  use string.Concat();
-        //        ///  put sentence together
-        //        /// </summary>
-        //        [Test]
-        //        public void Adding_String()
-        //        {
-        //            string first = "pancakes.";
-        //            string second = "I like";
-        //
-        //            Assert.AreEqual(result, "I like pancakes.");
-        //        }
+        /// <summary>
+        /// + is not best way of adding string
+        ///  use string.Concat();
+        ///  put sentence together
+        /// </summary>
+        [Test]
+        public void Adding_String()
+        {
+            string first = "pancakes.";
+            string second = "I like";
+            string result = string.Concat(second, " ", first);
 
-        //        /// <summary>
-        //        /// There is few more ways of constructing strings for example if you need add values of other variables inside you can do
-        //        /// https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.7.1#Starting
-        //        /// create string with both x and y insed
-        //        /// </summary>
-        //        [Test]
-        //        public void String_Format()
-        //        {
-        //            int x = 500;
-        //            int y = 453;
-        //            string result;
-        //
-        //            StringAssert.Contains(result, x.ToString());
-        //            StringAssert.Contains(result, y.ToString());
-        //        }
+            Assert.AreEqual(result, "I like pancakes.");
+        }
+
+        /// <summary>
+        /// There is few more ways of constructing strings for example if you need add values of other variables inside you can do
+        /// https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.7.1#Starting
+        /// create string with both x and y insed
+        /// </summary>
+        [Test]
+        public void String_Format()
+        {
+            int x = 500;
+            int y = 453;
+            string result = String.Format("The x and y is equal: {0} and {1}", x, y);
+         //// to jest to samo ale krócej:   string result1 = $"The x and y is equal: {x} and {y}";
+
+            Console.WriteLine(result);
+            StringAssert.Contains(x.ToString(), result);
+            StringAssert.Contains(y.ToString(), result);
+        }
 
         //        /// <summary>
         //        /// From theString return word "thing".
