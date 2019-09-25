@@ -11,9 +11,7 @@ namespace CSharp_Basics
     [TestFixture]
     public class DataTypesAndVariables
     {
-
-
-        /*
+         /*
          *1. Select each test and uncomment it (Ctrl+K, Ctrl+U)
          *2. Then follow the rules described in summary.
          *3. run test.
@@ -59,20 +57,19 @@ namespace CSharp_Basics
         [Test]
         public void Operation_On_Integers()
         {
-            int X = 4;
-            int Y = 5;
+            int x = 4;
+            int y = 5;
 
-            int add = X + Y;
-            int subtract = X - Y;
-            int multiply = X * Y;
-            double divide = (double)Y / X;
+            int add = x + y;
+            int subtract = x - y;
+            int multiply = x * y;
+            double divide = (double)y / x;
             /*
              * There are few other ways you can do this
              * int add = 0;
              * add = x+y;
              */
             
-
             Assert.AreEqual(9, add, "Example Has wrong value did you changed it?");
             Assert.AreEqual(-1, subtract, "Wrong value maybe other way around?");
             Assert.That(subtract, Is.TypeOf<int>(), "You sure it is int?");
@@ -82,57 +79,74 @@ namespace CSharp_Basics
             Assert.That(divide, Is.TypeOf<double>(), "You sure it is int?");
         }
 
-        //        /// <summary>
-        //        /// There are more way of changing value if you want to only increase x you can
-        //        /// x = x+5;
-        //        /// or
-        //        /// x+=5;
-        //        /// both means the same
-        //        /// but if you want increment only by one you can do
-        //        /// x++;
-        //        /// Take moment to play with it.
-        //        /// you can do same with other math operations.
-        //        /// </summary>
-        //        [Test]
-        //        public void Int_Increments()
-        //        {
-        //            int example = 5;
-        //            example += 10;
-        //            //example is 15
-        //            example++;
-        //            //example is 16 know;
-        //            Assert.AreEqual(example, 16);
-        //        }
+        /// <summary>
+        /// There are more way of changing value if you want to only increase x you can
+        /// x = x+5;
+        /// or
+        /// x+=5;
+        /// both means the same
+        /// but if you want increment only by one you can do
+        /// x++;
+        /// Take moment to play with it.
+        /// you can do same with other math operations.
+        /// </summary>
+        [Test]
+        public void Int_Increments()
+        {
+            int example = 5;
+            int liczba = 2;
+            example += 10;
 
-        //        /// <summary>
-        //        /// bool is the most straightforward and most useful it can only accept true and false.
-        //        /// We will talk more about it later, for now, create two bools:
-        //        /// truth and notTruth.
-        //        /// Assign to them true and false.
-        //        /// Try to assign number 6 to them.
-        //        /// </summary>
-        //        public void Bool()
-        //        {
+            //example is 15
+            example++;
+            example += liczba;
 
-        //            Assert.True(truth);
-        //            Assert.True(notTruth);
-        //        }
+            //example is 16 know;
+            Assert.AreEqual(example, 18);
+        }
 
-        //            /// <summary>
-        //            /// There are many ways to store real numbers
-        //            /// Float, Double and Decimal.
-        //            /// Decimal is most accurate but most expensive that why is is usual used for financial data.
-        //            /// Float, Double are faster but not always accurate. Ask your teacher for more details.
-        //            /// repeat operations add, subtract, divide, and multiply for double
-        //            /// </summary>
-        //            public void float_double_decimal()
-        //            {
-        //                decimal exampleDecimal = new decimal(10.5);
-        //
-        //                double X = 140000000000000000000000000.001;
-        //                double Y = 0.0000000000000000000000000008;
-        //
-        //            }
+        /// <summary>
+        /// bool is the most straightforward and most useful it can only accept true and false.
+        /// We will talk more about it later, for now, create two bools:
+        /// truth and notTruth.
+        /// Assign to them true and false.
+        /// Try to assign number 6 to them.
+        /// </summary>
+        public void Bool()
+        {
+            bool truth = true;
+            bool notTruth = false;
+
+            Assert.True(truth);
+            Assert.True(notTruth);
+        }
+
+        /// <summary>
+        /// There are many ways to store real numbers
+        /// Float, Double and Decimal.
+        /// Decimal is most accurate but most expensive that why is is usual used for financial data.
+        /// Float, Double are faster but not always accurate. Ask your teacher for more details.
+        /// repeat operations add, subtract, divide, and multiply for double
+        /// </summary>
+        [Test]
+        public void float_double_decimal()
+        {
+            decimal exampleDecimal = new decimal(10.5);
+
+            double x = 140000000000000000000000000.001;
+            double y = 0.0000000000000000000000000008;
+
+            double sumaDoub = x + y;
+            double multiplyD = x * y;
+            double div = x / y;
+            double rozn = x - y;
+
+            Assert.That(sumaDoub, Is.TypeOf<double>(), "Is that a double?");
+            Assert.AreEqual(div, 12);
+            Assert.AreEqual(sumaDoub, 12);
+            Assert.AreEqual(rozn, 12);
+            Assert.AreEqual(multiplyD, 12);
+        }
 
         //        /// <summary>
         //        /// Extra exercise
