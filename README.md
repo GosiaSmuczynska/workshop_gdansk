@@ -1,2 +1,9 @@
 ca³kowita zmiana pliku
-mergowanie
+Hello Gdansk!
+
+
+Zmiana jakas
+ana jakas
+
+
+zmiana 1
