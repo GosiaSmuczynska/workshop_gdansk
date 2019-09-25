@@ -81,8 +81,12 @@ namespace CSharp_Basics
         {
             var theString =
                 "The interesting thing about London is that there are always stylish surprises around every corner.";
+            //  var result = theString.Substring()
+            // inna wersja rozwiązania, bo wiemy że to słowa więc rozdzielamy słowa
+            var resultArray = theString.Split(' ');
+            var result = resultArray[2];
 
-            Assert.AreEqual(result, "thing");
+            Assert.AreEqual("thing", result);
         }
     }
 }
