@@ -65,7 +65,7 @@ namespace CSharp_Basics
             int add = X + Y;
             int subtract = X - Y;
             int multiply = X * Y;
-            double divide = (double)Y / X;
+            double divide = (double) Y / X;
             /*
              * There are few other ways you can do this
              * int add = 0;
