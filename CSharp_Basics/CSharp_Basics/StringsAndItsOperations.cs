@@ -65,24 +65,24 @@ namespace CSharp_Basics
             int x = 500;
             int y = 453;
             string result = String.Format("The x and y is equal: {0} and {1}", x, y);
-         //// to jest to samo ale krócej:   string result1 = $"The x and y is equal: {x} and {y}";
+         //// to jest to samo ale krócej:    string result1 = $"The x and y is equal: {x} and {y}";
 
             Console.WriteLine(result);
             StringAssert.Contains(x.ToString(), result);
             StringAssert.Contains(y.ToString(), result);
         }
 
-        //        /// <summary>
-        //        /// From theString return word "thing".
-        //        /// hint use Substring() method
-        //        /// </summary>
-        //        [Test]
-        //        public void Substrings()
-        //        {
-        //            var theString =
-        //                "The interesting thing about London is that there are always stylish surprises around every corner.";
-        //
-        //            Assert.AreEqual(result,"thing");
-        //        }
+        /// <summary>
+        /// From theString return word "thing".
+        /// hint use Substring() method
+        /// </summary>
+        [Test]
+        public void Substrings()
+        {
+            var theString =
+                "The interesting thing about London is that there are always stylish surprises around every corner.";
+
+            Assert.AreEqual(result, "thing");
+        }
     }
 }
