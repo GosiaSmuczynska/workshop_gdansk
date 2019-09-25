@@ -148,16 +148,17 @@ namespace CSharp_Basics
             Assert.AreEqual(multiplyD, 12);
         }
 
-        //        /// <summary>
-        //        /// Extra exercise
-        //        /// create a variable of each data type, and DON'T assign any value!;
-        //        /// Display them - you can do it Console.WriteLine(yourVariable);
-        //        /// Try to explain what happened.
-        //        /// </summary>
-        //        public void Default_Values()
-        //        {
-        //           
-        //        }
+        /// <summary>
+        /// Extra exercise
+        /// create a variable of each data type, and DON'T assign any value!;
+        /// Display them - you can do it Console.WriteLine(yourVariable);
+        /// Try to explain what happened.
+        /// </summary>
+        public void Default_Values()
+        {
+            char litera = 'a';
+            string z = "jakisciag";
+        }
 
         //Additonal read:
         // There are more types we didn't cover but it is worth knowing about
