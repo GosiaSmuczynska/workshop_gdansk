@@ -18,8 +18,7 @@ namespace Calculate
                 int parsedNumber = GetValueFromUser("Podaj liczbę pierwszą:");
                 int parsedNumber2 = GetValueFromUser("Podaj drugą liczbę:");
 
-                Console.WriteLine("Jakie działanie chcesz wykonać?");
-                Console.WriteLine("+ suma, * mnożenie, / dzielenie, - roznica");
+                Console.WriteLine("Podaj działanie");
                 string dzialanie = Console.ReadLine();
                 if (dzialanie == "q")
                 {
@@ -39,12 +38,18 @@ namespace Calculate
 
         public static int GetValueFromUser(string message)
         {
-            Console.WriteLine(message);
-            string valueFromUser = Console.ReadLine();
+            bool parsed = false;
             int parsedNumber = 0;
-            if (!int.TryParse(valueFromUser, out parsedNumber))
+            while (!parsed)
+                // lub while parsed == true
             {
-                Console.WriteLine($"nieznana wartość używamy wartości domyślnej {parsedNumber}");
+                Console.WriteLine(message);
+                string valueFromUser = Console.ReadLine();
+                parsed = int.TryParse(valueFromUser, out parsedNumber);
+                if (!parsed)
+                {
+                    message = $"wartosc {valueFromUser} nieznana, podaj liczbę";
+                }
             }
             return parsedNumber;
         }
