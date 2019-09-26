@@ -14,7 +14,6 @@ namespace Calculate
             //int y = 2;
             //int z = x + y;
             //Console.ReadKey();
-
             //Console.WriteLine("Wynik sumy dwóch liczb to {0}",z);
 
             Console.WriteLine("Podaj liczbę pierwszą:");
@@ -27,14 +26,44 @@ namespace Calculate
             Console.WriteLine($"podałeś wartości {parsedNumber} oraz {parsedNumber2}");
 
             Console.WriteLine("Jakie działanie chcesz wykonać?");
-            Console.WriteLine("s-suma, m-mnożenie, d-dzielenie, r-roznica");
+            Console.WriteLine("+ suma, * mnożenie, / dzielenie, - roznica");
+            string dzialanie = Console.ReadLine();
+            //   char dzialanie = char.Parse(dzial);
+            // Console.WriteLine($"Wybrałeś: {dzialanie}");
 
-            int result = Add(parsedNumber, parsedNumber2);
-            double divide = Divide(parsedNumber, parsedNumber2);
-            int multiply = Multiply(parsedNumber, parsedNumber2);
-            int substract = Substract(parsedNumber, parsedNumber2);
+            //przypisanie przed pętlą bo inaczej nie będzie wiedzial poza pętlą, a tak to w pętli tylko zmieniamy tą wartość
+            double result = 0;
+
+            if (dzialanie == "+")
+            {
+                result = Add(parsedNumber, parsedNumber2);
+            }
+            else if (dzialanie == "*")
+            {
+                result = Multiply(parsedNumber, parsedNumber2);
+            }
+            else if (dzialanie == "/")
+            {
+                result = Divide(parsedNumber, parsedNumber2);
+            }
+            else if (dzialanie == "-")
+            {
+                result = Substract(parsedNumber, parsedNumber2);
+            }
+            else
+                Console.WriteLine("Podałeś błędny znak działania");
+        
+    
+
+            //int result = Add(parsedNumber, parsedNumber2);
+            //double divide = Divide(parsedNumber, parsedNumber2);
+            //int multiply = Multiply(parsedNumber, parsedNumber2);
+            //int substract = Substract(parsedNumber, parsedNumber2);
+            
+
+         //   Console.WriteLine($"dodawanie {result}, dzielenie {divide}, mnozenie {multiply}, odejmowanie {substract}");
            
-           // Console.WriteLine($"Wynik działania: {dzialanie} to {wynik}.");
+            
 
             Console.ReadKey();
         }
