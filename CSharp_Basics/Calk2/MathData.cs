@@ -14,9 +14,10 @@ namespace Calk2
 
         public MathData(int firstNumber, int secondNumber, string operation)
         {
-            FirstNumber = firstNumber;
+            this.FirstNumber = firstNumber;  //gdybyśmy mieli tez z dużej litery to musimy użyć this.FirstNumber, czyli weź mie wartość z tej klasy
+            // można tez uzyc nawet jak inne nazwy żeby było wiadomo
             SecondNumber = secondNumber;
-            Operation = operation;
+            this.Operation = operation;
         }
     }
 }

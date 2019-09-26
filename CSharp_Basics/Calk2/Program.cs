@@ -15,17 +15,18 @@ namespace Calk2
             while (!quit)
             {
 
-            MathData mathData = new MathData(10, 50, "+"); //to już nie jest statycznie więc musimy stworzyć element
-            mathData.FirstNumber = UserInterface.GetValueFromUser("Podaj liczbę pierwszą:");
-              //  int parsedNumber = UserInterface.GetValueFromUser("Podaj liczbę pierwszą:");
-                if (quit)
-                {  UserInterface.Quit();                     //wyjdzie z metody, a break wyjdzie z while
-                }
-                mathData.SecondNumber = UserInterface.GetValueFromUser("Podaj drugą liczbę:");
-             //   int parsedNumber2 = UserInterface.GetValueFromUser("Podaj drugą liczbę:");
-                if (quit)
-                {  UserInterface.Quit();
-                }
+                MathData mathData = UserInterface.GetAllValuesFromCustomer();
+                //to już nie jest statycznie więc musimy stworzyć element
+            //mathData.FirstNumber = UserInterface.GetValueFromUser("Podaj liczbę pierwszą:");
+            //  //  int parsedNumber = UserInterface.GetValueFromUser("Podaj liczbę pierwszą:");
+            //    if (quit)
+            //    {  UserInterface.Quit();                     //wyjdzie z metody, a break wyjdzie z while
+            //    }
+            //    mathData.SecondNumber = UserInterface.GetValueFromUser("Podaj drugą liczbę:");
+            // //   int parsedNumber2 = UserInterface.GetValueFromUser("Podaj drugą liczbę:");
+            //    if (quit)
+            //    {  UserInterface.Quit();
+            //    }
 
                 string dzialanie = UserInterface.GetOperation();
                 var result = Calculations.Oblicz(mathData);
