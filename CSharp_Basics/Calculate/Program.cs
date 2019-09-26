@@ -16,21 +16,24 @@ namespace Calculate
             //Console.ReadKey();
             //Console.WriteLine("Wynik sumy dwóch liczb to {0}",z);
 
-            Console.WriteLine("Podaj liczbę pierwszą:");
-            string number1 = Console.ReadLine();
-            //zwraca czy udało się sparsować czy nie, jest typu bool, czyli najpierw zobacz czy się da i jak tak to parsuj
-            //a ta druga linijka tylko parsuje
-            int parsedNumber = 0;
-            if (!int.TryParse(number1, out parsedNumber))
-            {
-                Console.WriteLine($"nieznana wartość używamy wartości domyślnej {parsedNumber}");
-            }
-            // int parsedNumber = int.Parse(number1);
+            int parsedNumber = GetValueFromUser("Podaj liczbę pierwszą:");
+            int parsedNumber2 = GetValueFromUser("Podaj drugą liczbę:");
 
-            Console.WriteLine("Podaj liczbę drugą:");
-            string number2 = Console.ReadLine();
-            int parsedNumber2 = int.Parse(number2);
-            Console.WriteLine($"podałeś wartości {parsedNumber} oraz {parsedNumber2}");
+
+            //string number1 = Console.ReadLine();
+            ////zwraca czy udało się sparsować czy nie, jest typu bool, czyli najpierw zobacz czy się da i jak tak to parsuj
+            ////a ta druga linijka tylko parsuje
+            //int parsedNumber = 0;
+            //if (!int.TryParse(number1, out parsedNumber))
+            //{
+            //    Console.WriteLine($"nieznana wartość używamy wartości domyślnej {parsedNumber}");
+            //}
+            //// int parsedNumber = int.Parse(number1);
+
+            //Console.WriteLine("Podaj liczbę drugą:");
+            //string number2 = Console.ReadLine();
+            //int parsedNumber2 = int.Parse(number2);
+            //Console.WriteLine($"podałeś wartości {parsedNumber} oraz {parsedNumber2}");
 
             Console.WriteLine("Jakie działanie chcesz wykonać?");
             Console.WriteLine("+ suma, * mnożenie, / dzielenie, - roznica");
@@ -70,10 +73,7 @@ namespace Calculate
 
          //   Console.WriteLine($"dodawanie {result}, dzielenie {divide}, mnozenie {multiply}, odejmowanie {substract}");
            
-            Console.ReadKey();
-
-
-            switch (dzialanie)
+        switch (dzialanie)
             {
                 case "+":
                     result = Add(parsedNumber, parsedNumber2);
@@ -107,7 +107,19 @@ namespace Calculate
 
         }
 
-        public static int Add(int firstNumber, int secondNumber)
+        public static int GetValueFromUser(string message)
+        {
+            Console.WriteLine(message);
+            string number1 = Console.ReadLine();
+            int parsedNumber = 0;
+            if (!int.TryParse(number1, out parsedNumber))
+            {
+                Console.WriteLine($"nieznana wartość używamy wartości domyślnej {parsedNumber}");
+            }
+            return parsedNumber;
+        }
+
+    public static int Add(int firstNumber, int secondNumber)
         {
             int sum = firstNumber + secondNumber;
             return sum;
