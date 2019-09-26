@@ -10,13 +10,12 @@ namespace Calculate
     {
         static void Main(string[] args)
         {
-           // int wczytaj = Console.ReadKey(x);
-            int x = 5;
-            int y = 2;
-            int z = x + y;
-            Console.ReadKey();
+            //int x = 5;
+            //int y = 2;
+            //int z = x + y;
+            //Console.ReadKey();
 
-            Console.WriteLine("Wynik sumy dwóch liczb to {0}",z);
+            //Console.WriteLine("Wynik sumy dwóch liczb to {0}",z);
 
             Console.WriteLine("Podaj liczbę pierwszą:");
             string number1 = Console.ReadLine();
@@ -27,16 +26,42 @@ namespace Calculate
             int parsedNumber2 = int.Parse(number2);
             Console.WriteLine($"podałeś wartości {parsedNumber} oraz {parsedNumber2}");
 
-            Console.WriteLine(");
+            Console.WriteLine("Jakie działanie chcesz wykonać?");
+            Console.WriteLine("s-suma, m-mnożenie, d-dzielenie, r-roznica");
 
-            int suma = parsedNumber + parsedNumber2;
-            int mnoz = parsedNumber * parsedNumber2;
-            int dziel = parsedNumber / parsedNumber2;
-            int rozn = parsedNumber - parsedNumber2;
-
-            Console.WriteLine($"Wynik działania: {dzialanie} to {wynik}.");
+            int result = Add(parsedNumber, parsedNumber2);
+            double divide = Divide(parsedNumber, parsedNumber2);
+            int multiply = Multiply(parsedNumber, parsedNumber2);
+            int substract = Substract(parsedNumber, parsedNumber2);
+           
+           // Console.WriteLine($"Wynik działania: {dzialanie} to {wynik}.");
 
             Console.ReadKey();
         }
+
+        public static int Add(int firstNumber, int secondNumber)
+        {
+            int sum = firstNumber + secondNumber;
+            return sum;
+        }
+
+        public static double Divide(int firstNumber, int secondNumber)
+        {
+            double div = firstNumber / secondNumber;
+            return div;
+        }
+
+        public static int Multiply(int firstNumber, int secondNumber)
+        {
+            int mult = firstNumber * secondNumber;
+            return mult;
+        }
+
+        public static int Substract(int firstNumber, int secondNumber)
+        {
+            int sub = firstNumber + secondNumber;
+            return sub;
+        }
+
     }
 }
