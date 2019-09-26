@@ -22,7 +22,7 @@ namespace Calc2Test
             var result = Calculations.Oblicz(mathData);
 
             //Assert - robimy asercję do tej operacji
-            Assert.AreEqual(expectedResult, result);
+            Assert.AreEqual(expectectedReslut, result);
         }
         
         //[Test]
