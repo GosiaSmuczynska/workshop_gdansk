@@ -10,13 +10,22 @@ namespace Calk2
     {
 
        // public static class 
-        static bool quit = false;
+        public static bool quit = false;
 
         public static void Quit()
         {
             Console.WriteLine("Zamykam aplikacje");
             Console.ReadKey();
             Environment.Exit(0);
+        }
+
+        public static MathData GetAllValuesFromCustomer()
+        {
+            int first = GetValueFromUser("Podaj pierwszą");
+            int second = GetValueFromUser("Daj drugą");
+            string operation = GetOperation();
+
+            return new MathData(first, second, operation);  // on zwraca miejsce z pamięci i nie musi miec nazwy
         }
 
         public static string GetOperation()

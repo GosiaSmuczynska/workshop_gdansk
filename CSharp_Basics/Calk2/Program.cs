@@ -14,18 +14,21 @@ namespace Calk2
             // bool isRunning = true;
             while (!quit)
             {
-            int parsedNumber = UserInterface.GetValueFromUser("Podaj liczbę pierwszą:");
+
+            MathData mathData = new MathData(10, 50, "+"); //to już nie jest statycznie więc musimy stworzyć element
+            mathData.FirstNumber = UserInterface.GetValueFromUser("Podaj liczbę pierwszą:");
+              //  int parsedNumber = UserInterface.GetValueFromUser("Podaj liczbę pierwszą:");
                 if (quit)
                 {  UserInterface.Quit();                     //wyjdzie z metody, a break wyjdzie z while
                 }
-            int parsedNumber2 = UserInterface.GetValueFromUser("Podaj drugą liczbę:");
+                mathData.SecondNumber = UserInterface.GetValueFromUser("Podaj drugą liczbę:");
+             //   int parsedNumber2 = UserInterface.GetValueFromUser("Podaj drugą liczbę:");
                 if (quit)
                 {  UserInterface.Quit();
                 }
 
                 string dzialanie = UserInterface.GetOperation();
-                double result = 0;
-                result = Calculations.Oblicz(parsedNumber, parsedNumber2, dzialanie);
+                var result = Calculations.Oblicz(mathData);
 
                 Console.WriteLine($"{result}");
             }

@@ -9,31 +9,32 @@ namespace Calk2
     public static class Calculations
     {
         
-        public static double Oblicz(int parsedNumber, int parsedNumber2, string dzialanie)
+       // public static double Oblicz(int parsedNumber, int parsedNumber2, string dzialanie)
+        public static double Oblicz(MathData mathData)
         {
             double result = 0;
-            switch (dzialanie)
+            switch (mathData.Operation)
             {
                 case "+":
-                    result = Add(parsedNumber, parsedNumber2);
+                    result = Add(mathData.FirstNumber, mathData.SecondNumber);
                     break;
 
                 case "-":
-                    result = Substract(parsedNumber, parsedNumber2);
+                    result = Substract(mathData.FirstNumber, mathData.SecondNumber);
                     break;
 
                 case "*":
                 case "x":
-                    result = Multiply(parsedNumber, parsedNumber2);
+                    result = Multiply(mathData.FirstNumber, mathData.SecondNumber);
                     break;
 
                 case "/":
-                    if (parsedNumber2 == 0)
+                    if (mathData.SecondNumber == 0)
                     {
                         Console.WriteLine("Nie dziel przez zero");
                         break;
                     }
-                    result = Divide(parsedNumber, parsedNumber2);
+                    result = Divide(mathData.FirstNumber, mathData.SecondNumber);
                     break;
 
                 default:
