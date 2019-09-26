@@ -8,15 +8,29 @@ namespace Calculate
 {
     class Program
     {
+        static bool quit = false; //teraz ta wartość jest widoczna wszędzie, nawet w metodach
         static void Main(string[] args)
         {
 
-            bool isRunning = true;
-            while (isRunning)
+           // bool isRunning = true;
+            while (!quit)
             {
 
                 int parsedNumber = GetValueFromUser("Podaj liczbę pierwszą:");
+                if (quit)
+                {
+                    Console.WriteLine("Zamykam aplikacje");
+                    Console.ReadKey();
+                    return;
+                    //wyjdzie z metody, a break wyjdzie z while
+                }
                 int parsedNumber2 = GetValueFromUser("Podaj drugą liczbę:");
+                if (quit)
+                {
+                    Console.WriteLine("Zamykam aplikacje");
+                    Console.ReadKey();
+                    return;
+                }
 
                 Console.WriteLine("Podaj działanie");
                 string dzialanie = Console.ReadLine();
@@ -45,6 +59,11 @@ namespace Calculate
             {
                 Console.WriteLine(message);
                 string valueFromUser = Console.ReadLine();
+                if (valueFromUser == "q")
+                {
+                    quit = true;
+                    return 0;
+                }
                 parsed = int.TryParse(valueFromUser, out parsedNumber);
                 if (!parsed)
                 {
