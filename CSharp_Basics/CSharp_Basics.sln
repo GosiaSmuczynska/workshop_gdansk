@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calk2", "Calk2\Calk2.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc2Test", "Calc2Test\Calc2Test.csproj", "{2AAF3636-E9A4-4510-B98C-3049DA811F76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumTest", "SeleniumTest\SeleniumTest.csproj", "{BBF5F3BF-3138-452E-AE08-5B2E195D00A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2AAF3636-E9A4-4510-B98C-3049DA811F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AAF3636-E9A4-4510-B98C-3049DA811F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AAF3636-E9A4-4510-B98C-3049DA811F76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBF5F3BF-3138-452E-AE08-5B2E195D00A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBF5F3BF-3138-452E-AE08-5B2E195D00A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBF5F3BF-3138-452E-AE08-5B2E195D00A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBF5F3BF-3138-452E-AE08-5B2E195D00A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
