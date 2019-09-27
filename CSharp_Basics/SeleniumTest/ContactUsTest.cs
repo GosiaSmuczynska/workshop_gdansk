@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumTest.Pages;
+using System.IO;
 
 namespace SeleniumTest
 {
@@ -46,5 +47,26 @@ namespace SeleniumTest
 
             
         }
+
+        // zapisywanie rzeczy do pliku
+        [Test]
+        public void StreamWriterExample()
+        {
+
+
+
+            using(StreamReader sr = new StreamReader)
+            using (StreamWriter sw = new StreamWriter(@"C:\workspace\git\workshop_gdansk") ;
+            for (int i = 0; i < 100; i++) {
+                sw = 
+
+
+                    // brać linijka po linijce i zmieniać wartości tej którą chcemy
+            }
+            
+        }
+
+
+
     }
 }
