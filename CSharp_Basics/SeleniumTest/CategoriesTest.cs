@@ -7,32 +7,18 @@ using System;
 namespace SeleniumTest
 {
     [TestFixture]
-    public class Class1
+    public class CategoriesTest : TestBase  //po dwukropku wpisujemy klasę po której dziedziczymy i ta nasza będzie widziała te cechy ale dzieci nie mają dostępu do prywatnych rzeczy swoich rodziców więc w rodzicu musi być driver jako public
     {
-        IWebDriver driver;  //teraz ten driver będzie widoczny dla innych metod w teście, tu już deklarujemy ją i dlatego na dole już kasujemy var driver tylko przypisujemy do driver
-
-        [SetUp]
-        public void Setup()
-        {
-            driver = new ChromeDriver();  // tworzy obiekt tego drivera, postaw server tego drivera, skoro we wszystkich testach będziemy używać tego driver to inicjalizujemy go poza testem
-            var waitTime = new System.TimeSpan(0, 0, 1);
-            driver.Manage().Timeouts().ImplicitWait=waitTime;
-        }
-
-        //[TestCase("ul.sf-menu > li > a[title='Dresses']")]
-
-
+      //  IWebDriver driver;  //teraz ten driver będzie widoczny dla innych metod w teście, tu już deklarujemy ją i dlatego na dole już kasujemy var driver tylko przypisujemy do driver
+              //[TestCase("ul.sf-menu > li > a[title='Dresses']")]
         //public void CheckingProductNumber(string element, string productCounter)
         //{
         //    var categoryHeader = driver.FindElement(By.CssSelector(element));
         //    categoryHeader.Click();
-
         //    var product = driver.FindElement(By.CssSelector(productCounter));
         //    string text = productCounter.Text;
         //    StringAssert.Contains("5", text);
-
         //}
-
 
         [Test]
         public void FirstTest()
@@ -58,10 +44,6 @@ namespace SeleniumTest
 
         }
 
-        [TearDown]   //to jest atrybut który odpowiada za sprzątanie
-        public void TearDown()
-        {
-            driver.Quit();
-        }
+
     }
 }
