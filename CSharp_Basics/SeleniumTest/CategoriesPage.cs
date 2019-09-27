@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Configuration;
 
 namespace SeleniumTest
 {
@@ -14,7 +15,8 @@ namespace SeleniumTest
 
         public void GoToPage()
         {
-            driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+          string url = ConfigurationManager.AppSettings["url"];
+            driver.Navigate().GoToUrl($"{url}/index.php");
         }
 
         public CategoriesPage(IWebDriver driver)
