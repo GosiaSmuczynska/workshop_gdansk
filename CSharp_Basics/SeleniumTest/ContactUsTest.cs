@@ -1,11 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SeleniumTest.Pages;
 
 namespace SeleniumTest
 {
@@ -13,21 +9,25 @@ namespace SeleniumTest
 
     class ContactUsTest : TestBase
     {
+        ContactUsPage sut;  //system under test
 
         [SetUp]
         // najpierw wykona setup w klasie bazowej i dopiero w naszej klasie
         //czyli tu możemy wpisać inny url do wszystkich testów poniżej
-
-        // driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+        public void ContactUsSetup()
+        {
+        sut = new ContactUsPage(driver);
+            sut.GoToPage();
+        }
 
         [Test]
         public void ContactError()
         {
 
-            driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+          //  driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
 
-            var contactHeader = driver.FindElement(By.CssSelector("#contact-link"));  //ten element musimy do czegoś przypisać
-            contactHeader.Click();
+         //   var contactHeader = driver.FindElement(By.CssSelector("#contact-link"));  //ten element musimy do czegoś przypisać
+         //   contactHeader.Click();
 
             driver.FindElement(By.CssSelector("#submitMessage")).Click();
 
