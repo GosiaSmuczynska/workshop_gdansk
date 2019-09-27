@@ -54,6 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriesPage.cs" />
     <Compile Include="CategoriesTest.cs" />
     <Compile Include="ContactUsTest.cs" />
     <Compile Include="Pages\ContactUsPage.cs" />
