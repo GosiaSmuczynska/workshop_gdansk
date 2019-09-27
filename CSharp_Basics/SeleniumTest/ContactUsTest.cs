@@ -16,7 +16,7 @@ namespace SeleniumTest
         //czyli tu możemy wpisać inny url do wszystkich testów poniżej
         public void ContactUsSetup()
         {
-        sut = new ContactUsPage(driver);
+            sut = new ContactUsPage(driver);
             sut.GoToPage();
         }
 
@@ -24,22 +24,25 @@ namespace SeleniumTest
         public void ContactError()
         {
 
-          //  driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+                    //  driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
 
-         //   var contactHeader = driver.FindElement(By.CssSelector("#contact-link"));  //ten element musimy do czegoś przypisać
-         //   contactHeader.Click();
+                    //   var contactHeader = driver.FindElement(By.CssSelector("#contact-link"));  //ten element musimy do czegoś przypisać
+                    //   contactHeader.Click();
 
-            driver.FindElement(By.CssSelector("#submitMessage")).Click();
+                    // driver.FindElement(By.CssSelector("#submitMessage")).Click();
+            sut.ClickSubmitButton();
 
-            WebDriverWait waitDriver = new WebDriverWait(driver, new System.TimeSpan(0, 0, 15));
-            waitDriver.Until(ExpectedConditions.ElementExists(By.CssSelector(".alert-danger")));  //będzie czekać 15 sekund aż nie znajdzie tego elementu, to samo co implicit ale lokalnie plus możemy czekać aż np się nie pojawi - bardziej rozbudowany
+                    //WebDriverWait waitDriver = new WebDriverWait(driver, new System.TimeSpan(0, 0, 15));
+                    //waitDriver.Until(ExpectedConditions.ElementExists(By.CssSelector(".alert-danger")));  //będzie czekać 15 sekund aż nie znajdzie tego elementu, to samo co implicit ale lokalnie plus możemy czekać aż np się nie pojawi - bardziej rozbudowany
 
-            var ifError = driver.FindElement(By.CssSelector(".alert-danger"));  //można dodać li jeśli chcemy się dostać do elementu w środku czyli invalid email adres
-            string text = ifError.Text;
+            var errorMessage = sut.GetErrorMessage();
+
+                    //var ifError = driver.FindElement(By.CssSelector(".alert-danger"));  //można dodać li jeśli chcemy się dostać do elementu w środku czyli invalid email adres
+                    //string text = ifError.Text;
             
-            StringAssert.Contains("error", text);
+            StringAssert.Contains("error", errorMessage);
 
-            Assert.IsTrue(ifError.Displayed, "Error message wasn't displayed to user");
+                // Assert.IsTrue(ifError.Displayed, "Error message wasn't displayed to user");
 
             
         }
